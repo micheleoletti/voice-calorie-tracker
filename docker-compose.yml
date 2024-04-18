@@ -1,0 +1,21 @@
+name: voice-calorie-tracker
+
+services:
+  server:
+    build: ./server
+    ports:
+      - "3000:3000"
+      - "9229:9229"
+    volumes:
+      - duckdb-database:/app/data
+
+  # this is 2x slower than running it locally
+  # whisper:
+  #   build: ./whisper
+  #   ports:
+  #     - "8080:8080"
+  #   volumes:
+  #     - whisper-cpp-models:/app/models
+
+volumes:
+  duckdb-database:

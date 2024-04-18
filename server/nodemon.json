@@ -1,0 +1,9 @@
+{
+    "restartable": "rs",
+    "ignore": [
+        "node_modules/**",
+        ".git"
+    ],
+    "exec": "node --inspect=0.0.0.0:9229 -r ts-node/register server.ts",
+    "ext": "js,json,ts"
+}
