@@ -7,7 +7,7 @@ services:
       - "3000:3000"
       - "9229:9229"
     volumes:
-      - duckdb-database:/app/data
+      - ./data/products.db:/app/data/products.db
 
   # this is 2x slower than running it locally
   # whisper:

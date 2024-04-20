@@ -23,9 +23,8 @@ start-server:
 build-database-volume:
 	docker build -t build-duckdb-database ./data
 	docker volume create voice-calorie-tracker_duckdb-database
-	docker run -v voice-calorie-tracker_duckdb-database:/data build-duckdb-database
-	docker run --rm -v voice-calorie-tracker_duckdb-database:/data busybox find /data ! -name 'products.db' -type f -exec rm -f {} +
+	docker run -v ./data:/data build-duckdb-database
 
 start-devcontainer:
 	docker build -t server-devcontainer ./server
-	docker run -it -v ./server:/app -w /app -p 3000:3000 server-devcontainer
+	docker run -it -v ./server:/app -v ./data/products.db:/app/data/products.db -w /app -p 3000:3000 server-devcontainer
