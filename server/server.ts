@@ -1,7 +1,7 @@
 import express, { Request, Response } from "express";
-import { getMealAnalysis } from "./lib/complete-meal-data";
-import { dbInit, getDb } from "./lib/database";
-import { inferenceMealFromTranscription } from "./lib/meal-parser";
+import { getMealAnalysis } from "./lib/analysis";
+import { getDb } from "./lib/database";
+import { inferenceMealFromTranscription } from "./lib/inference";
 import { audioUpload } from "./lib/storage";
 import { transcribeAudioFile } from "./lib/transcribe";
 
@@ -23,7 +23,6 @@ app.post(
       }
 
       const db = await getDb();
-      await dbInit(db);
 
       const transcription = await transcribeAudioFile(req.file);
       const inferencedMeal = await inferenceMealFromTranscription(
