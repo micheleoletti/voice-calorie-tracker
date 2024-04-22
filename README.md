@@ -32,4 +32,4 @@ The overrall plan is pretty simple:
 - [ ] unit/e2e tests
 - [ ] create benchmark and optimize accuracy.
       Currently simple queries like "chicken breast" do not get the raw simple chicken breast values, but get pre-packaged chopped chicken breast instead.
-      Analyze the database and create a query that default to simple food in case of ambiguity.
+      Analyze the database and create a query that defaults to simple food in case of ambiguity
