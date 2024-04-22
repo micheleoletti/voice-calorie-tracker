@@ -21,18 +21,15 @@ The overrall plan is pretty simple:
 
 ## TODO
 
-### Backend
-
 - [x] setup TTS (Whisper)
 - [x] setup NLP (ollama + llama2)
 - [x] setup main endpoint (FastAPI)
-- [ ] use pandas to find out which columns are the most populated
-- [ ] create script to download data and recreate DB
-- [ ] setup Open Food Data dump locally (go for DuckDB, for read only db is enough)
-- [ ] prototype whole pipeline
-- [ ] optimize latency, dockerized LLMs are way too slow, either leave Docker or prepare Dockerfiles to be deployed on Linux machines with GPUs
-
-### Frontend
-
-- [ ] app views mockups
-- [ ] ... create React Native app 🤔
+- [x] create script to download data and recreate DB
+- [x] setup Open Food Data dump locally (go for DuckDB, for read only db is enough)
+- [x] prototype whole pipeline
+- [x] optimize latency by running whisper and ollama locally
+- [ ] clean food data/find a better query to avoid incomplete records
+- [ ] unit/e2e tests
+- [ ] create benchmark and optimize accuracy.
+      Currently simple queries like "chicken breast" do not get the raw simple chicken breast values, but get pre-packaged chopped chicken breast instead.
+      Analyze the database and create a query that default to simple food in case of ambiguity.
