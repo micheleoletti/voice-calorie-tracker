@@ -1,6 +1,6 @@
-# Voice Calorie Counter
+# Voice Calorie Tracker
 
-Calorie counter that allows to input meals with a voice message like you would tell a friend, instead of having to manually select each item and quantity.
+Calorie tracker that allows to input meals with a voice message like you would tell a friend, instead of having to manually select each item and quantity.
 
 Because the user will just describe in words what they ate, the app will look up foods in a generic way and precision may suffer, but I believe that the convenience of having an easy and fast way to log a meal will outweight the loss in precision.
 

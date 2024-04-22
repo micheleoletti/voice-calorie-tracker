@@ -26,9 +26,14 @@ const buildLLMMessage = (mealTranscription: string) => {
     messages: [
       {
         role: "system",
-        content: `Create a JSON with all the food that is being mentioned. 
-                The JSON should be in the following format and should contain all the food that has been mentioned in the user message: 
-                {
+        content: `Carefully review the user's message and create a JSON listing every food item mentioned. 
+                  Use standard terms like 'chicken breast' instead of 'chopped chicken breast' and convert all quantities to grams if possible.
+                  For each mentioned item, even if it is unclear, include it in the list with your best guess. 
+                  If the user mentions a quantity in another unit, convert it to grams using standard conversion rates (e.g., 1 piece of avocado approximately equals 230 grams).
+                  Include brands only if the user specifies. Ensure no food item is omitted, regardless of how briefly it's mentioned.
+
+                  Example format for the JSON:
+                  {
                     "products": [
                         {
                             "name": "Rice",
@@ -48,11 +53,11 @@ const buildLLMMessage = (mealTranscription: string) => {
                             "name": "Avocado",
                             "quantity": 1,
                             "unit": "piece",
-                            "quantityGrams": 230, // if user provides quantity in something else than grams, look up the average weight in grams and multiply by quantity
+                            "quantityGrams": 230,
                             "brand": ""
                         }
                     ]
-                }`,
+                  }`,
       },
       {
         role: "user",

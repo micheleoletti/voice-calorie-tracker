@@ -42,10 +42,10 @@ export const calculateMealStats = (products: Product[]): MealStats => {
   }
 
   return {
-    totalKcal,
-    totalFat,
-    totalCarbohydrates,
-    totalSugars,
-    totalProteins,
+    totalKcal: Math.ceil(totalKcal),
+    totalFat: Math.ceil(totalFat),
+    totalCarbohydrates: Math.ceil(totalCarbohydrates),
+    totalSugars: Math.ceil(totalSugars),
+    totalProteins: Math.ceil(totalProteins),
   };
 };
