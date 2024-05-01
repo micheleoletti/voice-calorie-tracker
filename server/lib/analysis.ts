@@ -32,7 +32,7 @@ export const calculateMealStats = (products: Product[]): MealStats => {
   let totalProteins = 0;
 
   for (const product of products) {
-    const consumed = product.quantityGrams / 100;
+    const consumed = product.quantity / 100;
 
     totalKcal += product.kcal * consumed;
     totalFat += product.fat * consumed;

@@ -36,7 +36,7 @@ const buildLLMMessage = (mealTranscription: string) => {
                   For each mentioned item, even if it is unclear, include it in the list with your best guess. 
 
                   Include brands only if the user specifies. 
-                  Ensure no food item is omitted.
+                  Ensure no food item is omitted and avoid duplication at all costs.
 
                   Example format for the JSON:
                   {
