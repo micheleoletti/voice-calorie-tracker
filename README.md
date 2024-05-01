@@ -28,8 +28,12 @@ The overrall plan is pretty simple:
 - [x] setup Open Food Data dump locally (go for DuckDB, for read only db is enough)
 - [x] prototype whole pipeline
 - [x] optimize latency by running whisper and ollama locally
-- [ ] clean food data/find a better query to avoid incomplete records
-- [ ] unit/e2e tests
-- [ ] create benchmark and optimize accuracy.
+- [x] clean food data/find a better query to avoid incomplete records
+- [x] create benchmark and optimize accuracy.
       Currently simple queries like "chicken breast" do not get the raw simple chicken breast values, but get pre-packaged chopped chicken breast instead.
       Analyze the database and create a query that defaults to simple food in case of ambiguity
+      (used nova_group=1 for aim for organic unbranded products)
+- [ ] unit/e2e tests
+- [ ] supports other units of measure othen than "grams".
+      I already tried but the model refuses to add another field with the average weight of 1 piece of the mentioned product.
+      I will try to achieve by moving to an agent-based approach, where 1 agent is responsible for enriching the food JSON with the average weight of the specified product.
