@@ -15,8 +15,4 @@ print('Database populated.')
 
 print('Data cleaning...')
 con.execute("UPDATE products SET product_name = LOWER(product_name), brands = LOWER(brands);")
-con.execute("ALTER TABLE products RENAME COLUMN energy_kcal_100g TO energy_kcal_100g;")
-
-
-
-
+con.execute("ALTER TABLE products RENAME COLUMN 'energy-kcal_100g' TO 'energy_kcal_100g';")

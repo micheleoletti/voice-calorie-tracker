@@ -18,7 +18,8 @@
 
   // Mounts the local server directory to the /app directory in the container to reflect changes
   "mounts": [
-    "source=${localWorkspaceFolder}/server,target=/app,type=bind,consistency=cached"
+    "source=${localWorkspaceFolder}/server,target=/app,type=bind,consistency=cached",
+    "source=./data/products.db,target=/app/data/products.db,type=bind"
   ],
 
   // Features to add to the dev container. More info: https://containers.dev/features.

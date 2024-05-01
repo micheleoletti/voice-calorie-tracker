@@ -13,14 +13,11 @@ setup-ollama:
 start-ollama:
 	ollama serve
 
-setup-server:
-	mkdir node-server
-
 start-server:
 	docker-compose up server --build
 
 # the volume name is strictly defined by the compose file, {project_name}_{service_name}
-build-database-volume:
+build-food-database:
 	docker build -t build-duckdb-database ./data
 	docker volume create voice-calorie-tracker_duckdb-database
 	docker run -v ./data:/data build-duckdb-database
