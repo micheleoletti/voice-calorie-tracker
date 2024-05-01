@@ -68,7 +68,10 @@ export const getProductByName = async (
 ) => {
   const whereClause = [`product_name LIKE '%${name.toLowerCase()}%'`];
   if (brand) {
-    whereClause.push(`brand LIKE '%${brand.toLowerCase()}%'`);
+    whereClause.push(`brands LIKE '%${brand.toLowerCase()}%'`);
+  } else {
+    // nova group is 1 for all products that have minimal processing, therefore are fresh organic unbranded products
+    whereClause.push(`nova_group = 1`);
   }
 
   const where =

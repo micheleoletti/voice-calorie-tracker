@@ -30,7 +30,7 @@ const fileAsFormData = async (file: Express.Multer.File) => {
     contentType: "audio/wav",
   });
 
-  await cleanupFiles(file.path, convertedFilePath);
+  // await cleanupFiles(file.path, convertedFilePath);
 
   return formData;
 };

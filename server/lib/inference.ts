@@ -20,17 +20,23 @@ export const inferenceMealFromTranscription = async (
 
 const buildLLMMessage = (mealTranscription: string) => {
   return {
-    model: "llama3",
+    model: "phi3",
     stream: false,
     format: "json",
     messages: [
       {
         role: "system",
-        content: `Carefully review the user's message and create a JSON listing every food item mentioned. 
-                  Use standard terms like 'chicken breast' instead of 'chopped chicken breast' and convert all quantities to grams if possible.
+        content: `Carefully review the user's message and create a JSON listing every food item mentioned.
+                  Unit can be either "g", "ml" or "piece".
+                  
+                  "averageWeight" is the average weight of a single piece of mentioned food item, the field is present only if "unit" is "piece".
+                  It's deadly fatal to omit "averageWeight" if "unit" is "piece"!
+
+                  Avoid duplication and only include items that are mentioned in the user's message.                  
                   For each mentioned item, even if it is unclear, include it in the list with your best guess. 
-                  If the user mentions a quantity in another unit, convert it to grams using standard conversion rates (e.g., 1 piece of avocado approximately equals 230 grams).
-                  Include brands only if the user specifies. Ensure no food item is omitted, regardless of how briefly it's mentioned.
+
+                  Include brands only if the user specifies. 
+                  Ensure no food item is omitted.
 
                   Example format for the JSON:
                   {
@@ -38,24 +44,35 @@ const buildLLMMessage = (mealTranscription: string) => {
                         {
                             "name": "Rice",
                             "quantity": 100,
-                            "unit": "grams",
-                            "quantityGrams": 100,
+                            "unit": "g",
                             "brand": "" // if user specifies one, otherwise leave empty
                         },
                         {
                             "name": "Chicken breast",
                             "quantity": 250,
-                            "unit": "grams",
-                            "quantityGrams": 250,
+                            "unit": "g",
                             "brand": ""
                         },
+                        {
+                            "name": "Pepsi",
+                            "quantity": 50,
+                            "unit": "ml",
+                            "brand": ""
+                        }
                         {
                             "name": "Avocado",
                             "quantity": 1,
                             "unit": "piece",
-                            "quantityGrams": 230,
+                            "averageWeight": 500,
                             "brand": ""
-                        }
+                        },
+                        {
+                          "name": "Apple",
+                          "quantity": 2,
+                          "unit": "piece",
+                          "averageWeight": 80,
+                          "brand": ""
+                      }
                     ]
                   }`,
       },
