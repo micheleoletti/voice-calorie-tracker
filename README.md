@@ -7,6 +7,7 @@ Because the user will just describe in words what they ate, the app will look up
 The goal is to reduce the friction in building and maintaining the habit of calorie tracking.
 
 ## Plan
+
 <img width="1089" alt="image" src="https://github.com/micheleoletti/voice-calorie-tracker/assets/61937589/af74783a-fc80-435e-9559-84d9a7f09aba">
 
 The overrall plan is pretty simple:
@@ -36,9 +37,9 @@ The next goal is to support the quantity being expressed in a more natural way, 
 
 ## TODO
 
-- [x] setup TTS (Whisper)
-- [x] setup NLP (ollama + llama2)
-- [x] setup main endpoint (FastAPI)
+- [x] setup TTS (Whisper.cpp)
+- [x] setup NLP (ollama + phi3)
+- [x] setup main endpoint (Express.js)
 - [x] create script to download data and recreate DB
 - [x] setup Open Food Data dump locally (go for DuckDB, for read only db is enough)
 - [x] prototype whole pipeline
