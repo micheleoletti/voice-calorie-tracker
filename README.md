@@ -7,13 +7,14 @@ Because the user will just describe in words what they ate, the app will look up
 The goal is to reduce the friction in building and maintaining the habit of calorie tracking.
 
 ## Plan
+<img width="1089" alt="image" src="https://github.com/micheleoletti/voice-calorie-tracker/assets/61937589/af74783a-fc80-435e-9559-84d9a7f09aba">
 
 The overrall plan is pretty simple:
 
 1. AUDIO
 2. TTS (Whisper)
 3. TEXT
-4. NLP (ollama + llama2)
+4. NLP (ollama + phi3)
 5. JSON with all meal items
 6. check nutrients for each meal item on the Open Food Data DB
 7. JSON with nutrients
