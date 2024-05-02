@@ -33,7 +33,10 @@ Example:
 | MyFitnessPal (manual input) | 1025     | 55     | 89     | 51     |
 | **voice-based endpoint**    | **1012** | **50** | **92** | **50** |
 
-The next goal is to support the quantity being expressed in a more natural way, like "2 apples and 1lt of coke", without having to specify the exact grams.
+The next goals are:
+
+- support the quantity being expressed in a more natural way, like "2 apples and 1lt of coke", without having to specify the exact grams
+- support branded food (right now the model is not able to set the "brand" field correctly, improve prompt or change data shape)
 
 ## TODO
 
