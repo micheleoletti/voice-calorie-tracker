@@ -20,6 +20,20 @@ The overrall plan is pretty simple:
 7. JSON with nutrients
 8. display data
 
+## Current status
+
+The endpoint is working quite well with simple organic foods and specific quantity in grams.
+
+Example:
+`"I ate 100 grams of white rice, 130 grams of chicken breast, 30g of avocado and 60g of nuts"`
+
+| Source                      | Kcal     | Prot   | Carbs  | Fat    |
+| --------------------------- | -------- | ------ | ------ | ------ |
+| MyFitnessPal (manual input) | 1025     | 55     | 89     | 51     |
+| **voice-based endpoint**    | **1012** | **50** | **92** | **50** |
+
+The next goal is to support the quantity being expressed in a more natural way, like "2 apples and 1lt of coke", without having to specify the exact grams.
+
 ## TODO
 
 - [x] setup TTS (Whisper)
