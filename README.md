@@ -37,6 +37,7 @@ The next goals are:
 
 - support the quantity being expressed in a more natural way, like "2 apples and 1lt of coke", without having to specify the exact grams
 - support branded food (right now the model is not able to set the "brand" field correctly, improve prompt or change data shape)
+- GROQ support for production... 🤔
 
 ## TODO
 
