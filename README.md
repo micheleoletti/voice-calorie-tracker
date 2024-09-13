@@ -6,6 +6,12 @@ Because the user will just describe in words what they ate, the app will look up
 
 The goal is to reduce the friction in building and maintaining the habit of calorie tracking.
 
+
+Video walkthrough:
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/T35co-ogt7w/hqdefault.jpg)](https://www.youtube.com/watch?v=T35co-ogt7w)
+
+
 ## Plan
 
 <img width="1089" alt="image" src="https://github.com/micheleoletti/voice-calorie-tracker/assets/61937589/af74783a-fc80-435e-9559-84d9a7f09aba">
